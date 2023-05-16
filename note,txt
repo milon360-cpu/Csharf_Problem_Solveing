@@ -1,0 +1,328 @@
+0.Write a C# program to determine the highest common factor (HCF) or CGD 
+            int n1,n2,reminder = 0;
+            Console.Write("Please Enter First Number:\t");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please Enter Second Number:\t");
+            n2 = Convert.ToInt32(Console.ReadLine());
+
+            while(n2 !=0 )
+            {
+                reminder = n1 % n2;
+                n1 = n2;
+                n2 = reminder;
+            }
+            Console.WriteLine("GCD:\t"+n1); 
+
+
+1.Write a C# program to determine the Least Common Miltiple (LCM) of two given number;
+            int n1,n2,reminder = 0;
+            Console.Write("Please Enter First Number:\t");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please Enter Second Number:\t");
+            n2 = Convert.ToInt32(Console.ReadLine());
+            int temp1 = n1, temp2 = n2;
+            while(n2 !=0 )
+            {
+                reminder = n1 % n2;
+                n1 = n2;
+                n2 = reminder;
+            }
+            int lcm = (temp1 * temp2) / n1;
+            Console.WriteLine("LCM:\t"+lcm);
+
+
+
+
+2.Write a C# program to check whether the number isArmstrong or not a three given numbers 
+             int number,reminder = 0,sum = 0;
+             Console.Write("Please Enter Number:\t");
+             number = Convert.ToInt32(Console.ReadLine());
+         
+             int temp = number;
+             while(number > 0)
+            {
+                reminder = number % 10;
+                sum = Convert.ToInt32( sum + Math.Pow(reminder,3));
+                number = number / 10;
+            }
+             if(sum == temp)
+            {
+                Console.WriteLine(temp+ " is the armstrong number");
+            }
+             else
+            {
+                Console.WriteLine(temp+ " is not armstrong number");
+            }
+
+
+3.Write a C# Program to check the wheather the entered number is prime or not
+         
+         int number,counter = 0;
+         Console.Write("Please Enter a Number:\t");
+         number =Convert.ToInt32(Console.ReadLine());
+         
+            if(number < 2 )
+            {
+                Console.WriteLine("Prime number started at 2");
+               return;
+            }
+            else
+            {
+                for(int i=2; i<number; i++)
+                {
+                    if(number % i == 0)
+                    {
+                        counter++ ;
+                        break;
+                    }
+                }
+            }
+
+            if(counter == 0)
+            {
+                Console.WriteLine(number + " is a prime number");
+            }
+            else
+            {
+                 Console.WriteLine(number + " is not prime number");
+            }
+
+
+
+4.Write a C# Program to reverse a given number
+            int number,reminder = 0, sum =0 ;
+            Console.Write("Please Enter a Number:\t");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            while(number > 0)
+            {
+                reminder = number % 10;
+                sum = (sum * 10) + reminder;
+                number = number / 10;
+            }
+            
+            Console.WriteLine("Reverse Number:\t"+sum);
+
+
+
+5.Write a C# Program to display the first n terms of Fibonacci Series 
+         int number,first = 0, second = 1, fibo = 0,counter = 0;
+          Console.Write("Please Enter the range of fibonacchi series:\t");
+          number = Convert.ToInt32(Console.ReadLine());
+          
+            while(counter < number)
+            {
+                if(counter <= 1)
+                {
+                    Console.Write(counter+" ");
+                }
+                else
+                {
+                    fibo = first + second;
+                    first = second;
+                    second = fibo;
+                     Console.Write(fibo+" ");
+                }
+               
+                counter ++;
+            }
+
+
+
+
+  // 6.Write a c# program to check then entered number is  a perfect number or not 
+
+            int number,sum = 0;
+            Console.Write("Please Enter a Number:\t");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            for(int i = 1; i<number; i++)
+            {
+                if(number % i == 0)
+                {
+                    sum = sum + i;
+                }
+            }
+
+            if(number == sum)
+            {
+                Console.WriteLine(number+" is a perfect number");
+            }
+            else
+            {
+                Console.WriteLine(number+" is not a  perfect number");
+            }
+
+// 7.Write a c# program to find the factorial number using recursion of a given number
+          int number;
+            Console.Write("Please Enter a factorial number:\t");
+            number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Factorail Number:\t"+fact(number));
+
+
+          public static int fact(int n)
+        {
+            if(n == 0 || n == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                return n * fact(n-1);
+            }
+        }
+
+
+8.Write a c# program to find the total number of vlowel of a string
+         string str;
+            Console.Write("Please Enter a string:\t");
+            str = Console.ReadLine().ToLower();
+
+            int numberOfVowel = 0;
+            foreach(char ch in str)
+            {
+                if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+                {
+                    numberOfVowel++;
+                }
+            }
+          
+            Console.WriteLine("Total number of Volwer:\t"+numberOfVowel);
+
+        {
+
+
+9.Write a c# program to check the number is strong or not
+         int number, reminder = 0, sum = 0, fact = 1;
+          Console.Write("Please Enter a number:\t");
+          number = Convert.ToInt32(Console.ReadLine());
+          int temp = number;
+            while(number > 0)
+            {
+                reminder = number % 10;
+                for(int i=1; i<=reminder; i++)
+                {
+                    fact = fact * i;
+                }
+                sum = sum + fact;
+                number = number / 10;
+                fact = 1;
+            }
+            if(temp == sum)
+            {
+                Console.WriteLine(sum+" is a strong number");
+            }
+            else
+            {
+                Console.WriteLine(sum+" is not a strong number");
+            }
+
+
+
+10.Write a c# program to check the number is disarium  or not 
+
+            int number,sum = 0,reminder = 0, i = 1;
+            Console.Write("Please Enter a Number:\t");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            int temp = number;
+            int len = number.ToString().Length;
+            number = Convert.ToInt32(number);
+           
+            while(number > 0)
+            {
+                reminder = number % 10;
+                sum = Convert.ToInt32(sum + Math.Pow(reminder,len));
+                number = number / 10;
+                len--;
+            }    
+            
+            if(sum == temp)
+            {
+                Console.WriteLine(temp+" is a disarium number");
+            }
+            else
+            {
+                 Console.WriteLine(temp+" is not a disarium number");
+            }
+
+
+
+
+11.Write a c# program to check the number is harshad  or not 
+
+            int number,sum = 0, reminder = 0,temp;
+            Console.Write("Plese Ente a number:\t");
+            number = Convert.ToInt32(Console.ReadLine());
+            temp = number;
+
+            while(number > 0)
+            {
+                reminder = number % 10;
+                sum = sum + reminder;
+                number = number / 10;
+            }
+            if(temp % sum == 0)
+            {
+                Console.WriteLine(temp+" is a harshed number");
+            }
+            else
+            {
+                Console.WriteLine(temp+" is not a harshed number");
+            }
+
+
+12.Write a c# program to count the number of digits of an integer number
+         int number,sum = 0, reminder = 0;
+            Console.Write("Plese Ente a number:\t");
+            number = Convert.ToInt32(Console.ReadLine());
+
+            while(number > 0)
+            {
+                reminder = number % 10;
+                sum = sum + reminder;
+                number = number / 10;
+            }
+           Console.WriteLine("Sum of total digits:\t"+sum);
+
+
+13.Write a c# program to calculate the code execuation time
+
+             DateTime time =  DateTime.Now;
+          
+             int startTime = time.Second;
+             for(int i=1; i<=1000000000; i++)
+                {
+                    
+                }
+              Thread.Sleep(3000);
+             DateTime time1 =  DateTime.Now;
+             int endTime = time1.Second;
+             Console.WriteLine("Starting Time:\t"+startTime);
+             Console.WriteLine("Ending Time:\t"+endTime);
+             Console.WriteLine("Total time of Execuation:\t"+(endTime - startTime));
+
+
+14.Write a c# program to remove first and last character 
+
+   string str,temp="";
+            Console.Write("Please Enter a String:\t");
+            str = Console.ReadLine();
+            int len = str.Length;
+
+            
+            for(int i=0; i<len; i++)
+            {
+                if(i == 0 || i == len-1)
+                {
+                    continue;
+                }
+                else
+                {
+                    temp += str[i];
+                  
+                }
+            }
+            
+            Console.WriteLine("Original String:\t"+str);
+            Console.WriteLine("New String:\t"+temp);
